@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Background : MonoBehaviour
 {
-    public List<MonoBehaviour> backgroundList = new List<MonoBehaviour>();
-    public MonoBehaviour player;
+    public List<Transform> backgroundList = new List<Transform>();
+    public Transform player;
     public Camera mainCamera;
     public float speed;
     float halfWidth;
@@ -25,6 +25,7 @@ public class Background : MonoBehaviour
         {
             var itemPos = item.transform.position;
 
+            print(halfWidth);
             if (playerPos.x + halfWidth > itemPos.x)
                 itemPos = new Vector3(playerPos.x + halfWidth, itemPos.y, 0);
             else
